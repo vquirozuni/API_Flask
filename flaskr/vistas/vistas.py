@@ -8,7 +8,7 @@ bloqueado_schema = BloqueadoSchema()
 
 class Health(Resource):
     def get(self):
-        return {"status": "ok"}, 200
+        return {"status": "OK"}, 200
 
 
 class VistaBlackList(Resource):
@@ -23,10 +23,10 @@ class VistaBlackList(Resource):
         _blocked_reason = request.json["blocked_reason"]
 
         if _email.strip() == "":
-            return {"mensaje":"Ingrese valor en email"}, 400
+            return {"mensaje":"Ingrese el valor de email"}, 400
 
         if _app_uuid.strip() == "":
-            return {"mensaje":"Ingrese valor en app_uuid"}, 400
+            return {"mensaje":"Ingrese el valor de app_uuid"}, 400
 
         bloqueado = Bloqueado.query.filter_by(email=_email).all()
         if bloqueado:
