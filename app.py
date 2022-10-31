@@ -1,12 +1,11 @@
 from flaskr import create_app
 from flaskr.modelos.modelos import db
 from flask_restful import Api
-from flaskr.vistas.vistas import VistaBlackList, VistaBloqueado, VistaLogIn
-from flaskr.vistas.vistas import Health
+from flaskr.vistas.vistas import VistaBlackList, VistaBloqueado, VistaLogIn, Health
 from flask_jwt_extended import JWTManager
 
 
-app = create_app('default')
+app = create_app()
 app_context = app.app_context()
 app_context.push()
 
